@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Leaflet Map</title>
+  <!-- 引入 Leaflet 的 CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <!-- 引入 Leaflet 的 JS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    #map {
+      height: 100%;
+      /* 設置地圖容器的高度 */
+      width: 100%;
+      /* 設置地圖容器的寬度 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 地圖容器 -->
+  <div id="map"></div>
+
+  <script>
+    // 初始化地圖並設置中心點和縮放級別
+    const map = L.map('map').setView([51.505, -0.09], 13);
+
+    // 加載 OpenStreetMap 底圖
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+  </script>
+
+</body>
+
+</html>
